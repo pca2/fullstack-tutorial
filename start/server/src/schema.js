@@ -34,5 +34,21 @@ const typeDefs = gql`
     #Not null array of Launch objects
     trips: [Launch]!
   }
+
+  type Mission {
+    name: String
+    #fields can take arguments as well
+    # the arguments correspond to an enum type
+    missionPatch(size: PatchSize): string
+  }
+  
+  # The available options for the MissionPatch arguments
+  enum PatchSize {
+    SMALL
+    LARGE
+  }
+
+
 `;
+
 module.exports = typeDefs;
