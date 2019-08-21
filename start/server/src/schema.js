@@ -22,5 +22,17 @@ const typeDefs = gql`
     isBooked: Boolean!
   }
 
+  type Rocket {
+    id: ID!
+    name: String
+    type: String
+  }
+
+  type User {
+    id: ID!
+    email: String!
+    #Not null array of Launch objects
+    trips: [Launch]!
+  }
 `;
 module.exports = typeDefs;
