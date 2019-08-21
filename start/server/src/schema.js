@@ -47,7 +47,24 @@ const typeDefs = gql`
     SMALL
     LARGE
   }
+  
+  type Mutation {
+    #takes in an an array of IDs and returns a TripUpdateResponse
+    #which is its own object type
+    bookTrips(launchIds: [ID]!): TripUpdateResponse!
+    #takes in just a single ID and returns a TripUpdateResponse
+    cancelTrip(launchId: ID!): TripUpdateResponse!
 
+    login(email: String): String # login token
+  }
+
+
+
+  type TripUpdateResponse {
+    success: Boolean!
+    message: String
+    launches: [Launch]
+  }
 
 `;
 
