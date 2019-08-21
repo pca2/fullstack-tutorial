@@ -39,7 +39,7 @@ const typeDefs = gql`
     name: String
     #fields can take arguments as well
     # the arguments correspond to an enum type
-    missionPatch(size: PatchSize): string
+    missionPatch(size: PatchSize): String
   }
   
   # The available options for the MissionPatch arguments
