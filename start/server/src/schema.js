@@ -11,6 +11,16 @@ const typeDefs = gql`
     me: User
   }
 
+  # define Launch object type, pretty close to a table 
+  type Launch {
+    id: ID!
+    # basic types like String are supported
+    site: String
+    #You can also use other objects as field types
+    mission: Mission
+    rocket: Rocket
+    isBooked: Boolean!
+  }
 
 `;
 module.exports = typeDefs;
